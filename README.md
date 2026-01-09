@@ -54,22 +54,22 @@ Sample files for testing are located in the `input_samples/` folder. Use these f
 
 ```mermaid
 graph TD
-    User((User)) -->|Chat / Upload| UI[Frontend (HTML/JS)]
-    UI -->|POST /api/chat| Server[FastAPI Server]
+    User((User)) -->|Chat / Upload| UI["Frontend (HTML/JS)"]
+    UI -->|POST /api/chat| Server["FastAPI Server"]
     
     subgraph Core Logic
-    Server -->|Process Input| Agent[Agent Core]
-    Agent -->|Identify Task| Intent[Intent Classifier]
+    Server -->|Process Input| Agent["Agent Core"]
+    Agent -->|Identify Task| Intent["Intent Classifier"]
     end
     
     subgraph Skills
-    Agent -->|Extraction| Processor[File Processor]
-    Processor -->|Image| Vision[Groq Vision Model]
-    Processor -->|Video| YT[YouTube API]
+    Agent -->|Extraction| Processor["File Processor"]
+    Processor -->|Image| Vision["Groq Vision Model"]
+    Processor -->|Video| YT["YouTube API"]
     end
     
     subgraph Brain
-    Intent -->|Query| LLM[Groq Llama 3]
+    Intent -->|Query| LLM["Groq Llama 3"]
     Agent -->|Generate| LLM
     end
     
