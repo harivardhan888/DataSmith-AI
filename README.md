@@ -13,10 +13,11 @@ DataSmith is a lightweight, multimodal AI agent built to analyze text, images, a
 
 ## Tech Stack
 
-*   **Frontend**: Vanilla HTML5, CSS3, JavaScript.
-*   **Backend**: Python FastAPI.
 *   **AI Engine**: Groq Cloud (Llama 3.3 70B Versatile, Llama Vision 3.2).
 *   **Tools**: `youtube-transcript-api`, `pypdf`.
+*   **Backend**: Python FastAPI.
+*   **Frontend**: Vanilla HTML5, CSS3, JavaScript.
+
 
 
 
