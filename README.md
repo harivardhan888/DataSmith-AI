@@ -2,6 +2,18 @@
 
 DataSmith is a lightweight, multimodal AI agent built to analyze text, images, audio, and video content instantly. It features a minimalist, "hacker-style" dark UI and is powered by Groq's Llama 3.3 models for extreme speed.
 
+## 🌐 Live Demo
+
+Try the application live here: **[https://datasmith-ai.onrender.com/](https://datasmith-ai.onrender.com/)**
+
+**How to use:**
+1.  Click the link above to open the web app.
+2.  **Chat**: Just type "Hello" or ask any question.
+3.  **Analyze Files**: Click the paperclip icon 📎 to upload an image (code screenshot) or PDF.
+4.  **YouTube**: Paste a YouTube video link to get a summary.
+
+*Note: The first request might take a few seconds as the free server spins up.*
+
 ## Features
 
 *   **Multimodal Chat**: Talk naturally with the AI.
