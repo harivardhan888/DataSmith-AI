@@ -1,0 +1,21 @@
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environments
+.env
+.venv
+venv/
+env/
+
+# Project Specific
+temp_uploads/
+server_error.log
+*.log
+
+# System
+.DS_Store
+Thumbs.db

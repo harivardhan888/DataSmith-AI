@@ -1,0 +1,60 @@
+# DataSmith AI - Testing Guide
+
+All sample files referenced below can be found in the "input_samples/" folder of the project.
+
+---------------------------------------------------------
+CASE 1: General Chat / Text Questions
+---------------------------------------------------------
+Input: Text Only (No file)
+Prompt: "Who are you?" or "Explain the concept of recursion."
+Expected Output:
+- The agent should respond with a clear, helpful text answer.
+- No "extraction" logs should appear.
+
+---------------------------------------------------------
+CASE 2: Audio Lecture Summary
+---------------------------------------------------------
+Input: Upload "input_samples/sample_audio.wav" (or similar short recording)
+Prompt: "Summarize this lecture."
+Expected Output:
+- A structured summary including:
+  1. A one-line summary.
+  2. 3 key bullet points.
+  3. A short paragraph details.
+
+---------------------------------------------------------
+CASE 3: PDF Action Items
+---------------------------------------------------------
+Input: Upload "input_samples/meeting_notes.pdf"
+Prompt: "Find the action items."
+Expected Output:
+- A refined list of tasks extracted from the PDF functionality.
+- Should filter out general text and focus on "To-Do" items.
+
+---------------------------------------------------------
+CASE 4: Image Code Explanation (Vision)
+---------------------------------------------------------
+Input: Upload "input_samples/code_snippet.png"
+Prompt: "Explain this code and find bugs."
+Expected Output:
+- An OCR transcription of the code.
+- An explanation of what the logic does.
+- Identification of any syntax errors or logical bugs.
+
+---------------------------------------------------------
+CASE 5: Ambiguity Check (Reasoning)
+---------------------------------------------------------
+Input: Upload "input_samples/code_snippet.png"
+Prompt: "Write a poem."
+Expected Behavior:
+- The agent should detect a mismatch (Creative request vs Technical file).
+- The agent asks a CLARIFICATION question: "Do you want a poem ABOUT this code?"
+- It should NOT blindly write a random poem without checking first.
+
+---------------------------------------------------------
+CASE 6: YouTube Summarization
+---------------------------------------------------------
+Input: "Summarize this video: https://www.youtube.com/watch?v=x7X9w_GIm1s"
+Expected Output:
+- Fetches transcript.
+- Returns a summary of the video content.
