@@ -9,15 +9,19 @@ from agent_core import Agent
 
 app = FastAPI()
 
-# Temp storage for uploads
-UPLOAD_DIR = "temp_uploads"
+# Make paths absolute to fix deployment issues (CSS not loading)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_DIR = os.path.join(BASE_DIR, "static")
+UPLOAD_DIR = os.path.join(BASE_DIR, "temp_uploads")
+
+# Mount static files (Frontend)
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 agent = Agent()
 
 @app.get("/")
 async def read_root():
-    return FileResponse("static/index.html")
+    return FileResponse(os.path.join(STATIC_DIR, "index.html"))
 
 @app.post("/api/chat")
 async def chat_endpoint(
@@ -61,4 +65,4 @@ async def chat_endpoint(
         print(f"Server Error: {str(e)}")
         return JSONResponse(content={"status": "error", "output": str(e)}, status_code=500)
 
-app.mount("/static", StaticFiles(directory="static", html=True), name="static")
+app.mount("/static", StaticFiles(directory=STATIC_DIR, html=True), name="static")
